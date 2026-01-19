@@ -72,7 +72,7 @@ import Quickshell
 import qs.services // For Contracts
 
 Scope {
-    Component.onCompleted: {
+    Component.onCompleted: { // This is not reactive use Connections to make it reactive
         Contracts.overridePowerMenu( // Powermenu example
             Qt.resolvedUrl(
                 Directories.shellConfig +
