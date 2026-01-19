@@ -1,7 +1,7 @@
 {
   "id": activateLinux
   "name": "Activate Linux Badge"
-  "version": "0.1.0"
+  "version": 0.1.0
   "description": "Shows a activateLinux badge on the screen"
   "repo": "null"
 }
