@@ -62,6 +62,26 @@ QtObject {
   "img": "https://example.com/preview.png" # This should be a url (tip: use github urls)
 }
 ```
+## Overriding Shell's Modules
+* If you want to create plugins like: Better-PowerMenu, Better-Bar etc.
+
+You can use the Contracts service to override the modules like this:
+```qml
+import QtQuick
+import Quickshell
+import qs.services // For Contracts
+
+Scope {
+    Component.onCompleted: {
+        Contracts.overridePowerMenu( // Powermenu example
+            Qt.resolvedUrl(
+                Directories.shellConfig +
+                "/plugins/betterPowerMenu/PowerMenu.qml"
+            )
+        )
+    }
+}
+```
 
 ## Plugin Distribution
 To distribute your plugin under the shell's database(this repo or other repos).
