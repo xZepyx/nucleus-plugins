@@ -4,5 +4,5 @@
   "version": "0.1.0",
   "author": "unknown",
   "description": "Shows an Activate Linux badge on the screen",
-  "img": "https://github.com/xZepyx/nucleus-plugins/blob/main/activateLinux/preview.png"
+  "img": "https://raw.githubusercontent.com/xZepyx/nucleus-plugins/refs/heads/main/activateLinux/preview.png"
 }
