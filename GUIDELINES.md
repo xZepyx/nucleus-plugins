@@ -1,4 +1,4 @@
-# Guidelines
+# Plugin Documentation
 
 This document will explain how to create your own plugin.
 
