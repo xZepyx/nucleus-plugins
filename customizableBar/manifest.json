@@ -1,0 +1,8 @@
+{
+    "name": "Customizable Bar",
+    "id": "customizableBar",
+    "description": "Adds support to customize modules position to the default bar.",
+    "img": "https://raw.githubusercontent.com/xZepyx/nucleus-plugins/refs/heads/main/customizableBar/preview.png",
+    "version": "0.1.0",
+    "author": "xZepyx"
+}

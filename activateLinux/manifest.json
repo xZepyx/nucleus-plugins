@@ -2,7 +2,7 @@
   "id": "activateLinux",
   "name": "Activate Linux Badge",
   "version": "0.1.0",
-  "author": "unknown",
+  "author": "outfoxxed",
   "description": "Shows an Activate Linux badge on the screen",
   "img": "https://raw.githubusercontent.com/xZepyx/nucleus-plugins/refs/heads/main/activateLinux/preview.png"
 }
