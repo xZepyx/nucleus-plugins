@@ -1,0 +1,8 @@
+{
+    "id": "mediaPlayerWidget",
+    "name": "Media Player Widget",
+    "version": "0.1.0",
+    "author": "amegosDante",
+    "description": "A simple media player desktop widget.",
+    "img": "https://raw.githubusercontent.com/xZepyx/nucleus-plugins/refs/heads/main/mediaPlayerWidget/preview.png"
+}
