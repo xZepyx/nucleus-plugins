@@ -2,7 +2,7 @@
     "id": "mediaPlayerWidget",
     "name": "Media Player Widget",
     "version": "0.1.0",
-    "author": "amegosDante",
+    "author": "amego",
     "description": "A simple media player desktop widget.",
     "requires_nucleus": ">=0.4.1"
 }
