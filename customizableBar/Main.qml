@@ -24,7 +24,9 @@ Scope {
             id: bar
 
             Component.onCompleted: {
-                Contracts.overrideBar()
+		if (!Config.runtime.plugins.customizableBar.enabled)
+                    return; 
+		Contracts.overrideBar()
             }
 
             required property var modelData
