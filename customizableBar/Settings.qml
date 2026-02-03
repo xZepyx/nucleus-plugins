@@ -4,7 +4,7 @@ import Quickshell
 import Quickshell.Io
 import Quickshell.Widgets
 import qs.config
-import qs.modules.widgets
+import qs.modules.components
 import qs.services
 
 ColumnLayout {

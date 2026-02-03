@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import qs.plugins
-import qs.modules.widgets
+import qs.modules.components
 
 ColumnLayout {
     spacing: 15

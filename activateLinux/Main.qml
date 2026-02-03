@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 import Quickshell.Wayland
-import qs.modules.widgets
+import qs.modules.components
 import qs.config
 
 

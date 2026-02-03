@@ -8,7 +8,7 @@ import Quickshell.Wayland
 import Quickshell.Widgets
 import qs.config
 import qs.modules.interface.sidebarRight.content
-import qs.modules.widgets
+import qs.modules.components
 import qs.services
 
 Scope {
