@@ -13,7 +13,6 @@ Scope {
 
         PanelWindow {
             required property var modelData
-            property int padding: 50
 
             color: "transparent"
             visible: Config.runtime.plugins.mediaPlayerWidget.enabled && Config.initialized
@@ -22,7 +21,6 @@ Scope {
             screen: modelData
 
             anchors { top: true; bottom: true; left: true; right: true }
-            margins { top: padding; bottom: padding; left: padding; right: padding }
 
             Item {
                 id: rootContentContainer
