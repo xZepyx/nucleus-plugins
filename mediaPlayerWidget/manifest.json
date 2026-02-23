@@ -1,8 +1,8 @@
 {
     "id": "mediaPlayerWidget",
     "name": "Media Player Widget",
-    "version": "0.2.1",
+    "version": "0.2.0",
     "author": "amego",
     "description": "A simple media player desktop widget.",
-    "requires_nucleus": ">=0.7.6"
+    "requires_nucleus": ">=0.4.1"
 }

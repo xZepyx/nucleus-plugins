@@ -47,8 +47,8 @@ Item {
     property int playerIndex: 0
     property MprisPlayer player: Mpris.players.values.length > 0 ? Mpris.players.values[playerIndex % Mpris.players.values.length] : null
 
-    implicitWidth: Config.runtime.plugins.mediaPlayerWidget.useCustomDimensions ? Math.max(Config.runtime.plugins.mediaPlayerWidget.width, Math.max(450, playerContent.implicitWidth + 40)) : Math.max(450, playerContent.implicitWidth + 40)
-    implicitHeight: Config.runtime.plugins.mediaPlayerWidget.useCustomDimensions ? Math.max(Config.runtime.plugins.mediaPlayerWidget.width, slideContainer.height + bottomSection.height + 30) : slideContainer.height + bottomSection.height + 30
+    implicitWidth: Math.max(450, playerContent.implicitWidth + 40)
+    implicitHeight: slideContainer.height + bottomSection.height + 30
 
     function cyclePlayer(direction) {
         const count = Mpris.players.values.length
