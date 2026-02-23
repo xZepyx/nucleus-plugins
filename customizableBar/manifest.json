@@ -4,5 +4,5 @@
     "description": "Adds support to customize modules position to the default bar.",
     "version": "0.1.0",
     "author": "nano",
-    "requires_nucleus": "=0.4.0"
+    "requires_nucleus": ">=0.4.0"
 }
