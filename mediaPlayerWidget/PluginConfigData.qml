@@ -7,5 +7,8 @@ QtObject {
         enabled: true,
         xPos: 0,
         yPos: 0,
+        useCustomDimensions: false,
+        width: 350,
+        height: 300
     })
 }
