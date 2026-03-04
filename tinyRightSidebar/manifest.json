@@ -1,0 +1,8 @@
+{
+    "id": "tinyRightSidebar",
+    "name": "Tiny Right Sidebar",
+    "version": "0.1.0",
+    "author": "zepyx",
+    "description": "A smaller and simpler variant for the right sidebar.",
+    "requires_nucleus": ">=0.7.0"
+}
