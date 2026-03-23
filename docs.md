@@ -84,48 +84,73 @@ Loader {
 ```
 
 ## Overriding Shell's Modules
-* If you want to create plugins like: Better-PowerMenu, Better-Bar etc.
 
-You can use the Contracts service to override the modules like this:
+If you want to create plugins like: Better-PowerMenu, Better-Bar, etc., you can use the Contracts service to override modules.
+
+### Replacing a module with your own component
+
 ```qml
 import QtQuick
 import Quickshell
-import qs.services // For Contracts
+import qs.services  // For Contracts
 
 Scope {
-    Component.onCompleted: { // This is not reactive use Connections to override reactively
-        Contracts.overrideBar()
+    Component.onCompleted: {
+        // Replace the default bar with your own
+        Contracts.bar.override(Qt.resolvedUrl("./MyBar.qml"))
     }
 }
 ```
 
-To override only if module enabled:
+### Disabling a module entirely
+
 ```qml
-function overrideReactively() {
-	if (!Config.plugins.exampleBetterBarPluginId() {
-		return
-	Contracts.overrideBar();
+Component.onCompleted: {
+    Contracts.bar.disable()
 }
 ```
 
-All the supported override functions: 
+### Overriding conditionally based on plugin config
+
 ```qml
-    Contracts.overrideBar();
-    Contracts.overridePowermenu();
-    Contracts.overrideLauncher();
-    Contracts.overrideOverlays();
-    Contracts.overrideSidebarLeft();
-    Contracts.overrideLockScreen();
-    Contracts.overrideNotifications();
-    Contracts.overrideBackground();
-    Contracts.overrideSidebarRight();
-    // Overriding any ipc's or globals is not allowed (including settings application)
+Component.onCompleted: {
+    if (Config.runtime.plugins.examplePlugin?.enabled !== true)
+        return
+    Contracts.bar.override(Qt.resolvedUrl("./MyBar.qml"))
+}
 ```
+
+### All overridable slots
+
+```qml
+Contracts.bar.override(Qt.resolvedUrl("./MyBar.qml"))
+Contracts.powerMenu.override(Qt.resolvedUrl("./MyPowerMenu.qml"))
+Contracts.launcher.override(Qt.resolvedUrl("./MyLauncher.qml"))
+Contracts.overlays.override(Qt.resolvedUrl("./MyOverlays.qml"))
+Contracts.sidebarLeft.override(Qt.resolvedUrl("./MySidebarLeft.qml"))
+Contracts.sidebarRight.override(Qt.resolvedUrl("./MySidebarRight.qml"))
+Contracts.lockScreen.override(Qt.resolvedUrl("./MyLockScreen.qml"))
+Contracts.notifications.override(Qt.resolvedUrl("./MyNotifications.qml"))
+Contracts.background.override(Qt.resolvedUrl("./MyBackground.qml"))
+Contracts.dock.override(Qt.resolvedUrl("./MyDock.qml"))
+// Overriding Settings, IPC, or Globals is not allowed
+```
+
+### Checking override state
+
+You can read the state of any slot at any time:
+
+```qml
+console.log(Contracts.bar.overridden)  // true if overridden by a plugin
+console.log(Contracts.bar.disabled)    // true if disabled
+console.log(Contracts.bar.source)      // the currently active URL
+```
+
 
 ## Plugin Distribution
 To distribute your plugin under the shell's database(this repo or other repos).
 
-* Fork this repository and push your plugin to the forked repo. Once you think that your plugin is complete make a PR and wait for you PR to get merged.
+* Fork this repository and push your plugin to the forked repo. Once you think that your plugin is complete make a PR and wait for your PR to get merged.
 
-* Other custom plugin repo's can be created by the community containing other plugins. If the repository is good enough and has multiple cool plugins it will be added in the plugin fetch utility as a [community] repository. Also note that the repo's should not contain multiple plugins with the same id. If present the repository to have being fetched the same pluginId
-will win.
+* Other custom plugin repo's can be created by the community containing other plugins. If the repository is good enough and has multiple cool plugins it will be added in the plugin fetch utility as a [community] repository. Also note that the repo's should not contain multiple plugins with the same id. If present the repository to have being fetched before with the same pluginId
+will override other plugins.
