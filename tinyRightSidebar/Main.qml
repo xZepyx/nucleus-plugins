@@ -29,9 +29,7 @@ PanelWindow {
     property real sidebarRightHeight: 490
 
     Component.onCompleted: {
-		if (!Config.runtime.plugins.tinyRightSidebar.enabled)
-                    return; 
-		Contracts.overrideSidebarRight()
+		Contracts.sidebarRight.disable()
     }
 
     implicitWidth: sidebarRightWidth
